@@ -7,7 +7,7 @@ const md_autenticacion =  require('../middlewares/autenticacion');
 var api = express.Router();
 // PRODUCTOS
 // le quite el auth a productos jajajaja
-api.get('/productos', ejemploController.ObtenerProductos);
+api.get('/productos', md_autenticacion.Auth, ejemploController.ObtenerProductos);
 api.get('/productos/:idProductos', ejemploController.ObtenerProductoId);
 api.get('/buscarNombreProd/:nombreProducto', ejemploController.ObtenerProductoNombre);
 api.post('/agregarProductos', ejemploController.AgregarProducto);
